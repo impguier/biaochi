@@ -2,10 +2,12 @@ doctype html
 html
     head
         title= title
+        meta(charset='utf-8')
         meta(name='viewport',content='width=device-width,initial-scale=1;')
-        link(rel='stylesheet', href='/stylesheets/style.css')
+        link(rel='stylesheet', href='/stylesheets/index.css')
+
         script(src="/javascripts/lib/zepto.1.6.js")
     body
-      div#container
-          canvas#panel
+      div#container(style="")
+          canvas#panel(style='width:100%;') 您的浏览器不支持canvas
       script(src='javascripts/index.js')
