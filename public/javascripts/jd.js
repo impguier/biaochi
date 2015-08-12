@@ -373,7 +373,17 @@
                         }
                         if (b++, b >= X.option.canvasWidth / X.option.ruleCellWidth) break
                     }
-                    if (K.stroke(), K.save(), K.beginPath(), K.strokeStyle = "rgb(255,128,26)", K.translate(.5, 0), K.moveTo(X.option.canvasWidth / 2, 0), K.lineTo(X.option.canvasWidth / 2, X.option.canvasHeight), K.stroke(), K.closePath(), K.restore(), I) {
+                    if (
+                        K.stroke(),
+                            K.save(),
+                            K.beginPath(),
+                            K.strokeStyle = "rgb(255,128,26)",
+                            K.translate(.5, 0),
+                            K.moveTo(X.option.canvasWidth / 2, 0),
+                            K.lineTo(X.option.canvasWidth / 2, X.option.canvasHeight),
+                            K.stroke(), K.closePath(),
+                            K.restore(),
+                            I) {
                         var c = w.val() || 0;
                         X.option.totalMoney = c, s.setStore("allMoney", {
                             money: c
