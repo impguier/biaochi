@@ -1,6 +1,7 @@
 $(function(){
     $.CONSTANT = {
-        defaultMoney :100000
+        defaultMoney :10000,
+        preMoved:0
     };
     $.tools = {};
     $.extend($.tools,{
@@ -132,28 +133,17 @@ $(function(){
     });
     canvas.addEventListener("touchmove",function(e){
         var touch = event.touches[0];
-          //endY = (startY - touch.pageY);
             endX = touch.pageX;
 
-        /*$.CONSTANT.defaultMoney = $.CONSTANT.defaultMoney - ()*100 <100?100:(clientx / $("body").width() / 60);
-        console.log($.CONSTANT.defaultMoney);
-        context.clearRect(0,0,500,500);
-        drawRuleBiao(context,$.CONSTANT.defaultMoney,obj);*/
-        var every = $("body").width() / 60 ;
+        var every = 14;/*$("body").width() / 60*/ ;
         var context = $("#panel")[0].getContext("2d");
-        var moved = startX - endX;
+        var moved = endX - startX;
         context.clearRect(0,0,$("body").width()*2,500);
-        //var limitWidth = $("body").width()*0.2;
-        //var limitWidth2 = $("body").width()*0.4;
-        if(moved > 0){
-            //$.CONSTANT.defaultMoney = $.CONSTANT.defaultMoney + 100;
-                $.CONSTANT.defaultMoney = $.CONSTANT.defaultMoney + 100;
 
-        }
-        if(moved < 0){
-                $.CONSTANT.defaultMoney = $.CONSTANT.defaultMoney - 100;
-
-        }
+        $.CONSTANT.defaultMoney = $.CONSTANT.defaultMoney + 100;
+        console.log(Math.floor(moved/every));
+        console.log($.CONSTANT.defaultMoney);
+       // console.log($.CONSTANT.defaultMoney);
         var obj = drawRuleBorder(context);
         drawRuleBiao(context, $.CONSTANT.defaultMoney,obj);
         drawCenterLine(context,obj);
@@ -162,22 +152,7 @@ $(function(){
     });
     canvas.addEventListener("touchend",function(e){
 
-      //  var touchObj = e.touches[0];
-       // var clientx = touchObj.clientX;
-       // var $target = $(touchObj.target);
-       /* var every = $("body").width() / 60 ;
-        var context = $("#panel")[0].getContext("2d");
-        var moved = startX - endX;
-        context.clearRect(0,0,$("body").width()*2,500);
-        if(moved > 0){
-            $.CONSTANT.defaultMoney = $.CONSTANT.defaultMoney + (moved / every * 100);
-        }else{
-            $.CONSTANT.defaultMoney = $.CONSTANT.defaultMoney - (moved / every * 100);
-        }
-        var obj = drawRuleBorder(context);
-        drawRuleBiao(context, $.CONSTANT.defaultMoney,obj);
-        drawCenterLine(context,obj);
-        console.log($.CONSTANT.defaultMoney);*/
+
     });
     function getMoneyArray(money){
         var money = Math.floor(money /1000)*1000;

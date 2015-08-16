@@ -97,7 +97,8 @@
                 var b = new Date;
                 i = b.getTime()
             }, !1), document.getElementById("gearCot").addEventListener("touchmove", function(a) {
-                d = a.touches[0].clientX, x.find("ul").css("margin-left", -(H - 1) * (u / 4) + (d - c) / 4), d - c > 0 ? (h = H - 1, x.find("li").eq(H).css("width", 2 * u / 4 - u / 4 * Math.abs(d - c) / u + "px").find(".ho-h-tt").css("font-size", 1.875 - .875 * Math.abs(d - c) / u + "rem"), x.find("li").eq(H).css("width", 2 * u / 4 - u / 4 * Math.abs(d - c) / u + "px").find(".ho-h-to").css("font-size", .9375 - .1875 * Math.abs(d - c) / u + "rem"), x.find("li").eq(h).css("width", u / 4 + u / 4 * Math.abs(d - c) / u + "px").find(".ho-h-tt").css("font-size", 1 + .875 * Math.abs(d - c) / u + "rem"), x.find("li").eq(h).css("width", u / 4 + u / 4 * Math.abs(d - c) / u + "px").find(".ho-h-to").css("font-size", .75 + .1875 * Math.abs(d - c) / u + "rem")) : (g = H + 1, x.find("li").eq(H).css("width", 2 * u / 4 - u / 4 * Math.abs(d - c) / u + "px").find(".ho-h-tt").css("font-size", 1.875 - .875 * Math.abs(d - c) / u + "rem"), x.find("li").eq(H).css("width", 2 * u / 4 - u / 4 * Math.abs(d - c) / u + "px").find(".ho-h-to").css("font-size", .9375 - .1875 * Math.abs(d - c) / u + "rem"), x.find("li").eq(g).css("width", u / 4 + u / 4 * Math.abs(d - c) / u + "px").find(".ho-h-tt").css("font-size", 1 + .875 * Math.abs(d - c) / u + "rem"), x.find("li").eq(g).css("width", u / 4 + u / 4 * Math.abs(d - c) / u + "px").find(".ho-h-to").css("font-size", .75 + .1875 * Math.abs(d - c) / u + "rem"))
+                d = a.touches[0].clientX,
+                    x.find("ul").css("margin-left", -(H - 1) * (u / 4) + (d - c) / 4), d - c > 0 ? (h = H - 1, x.find("li").eq(H).css("width", 2 * u / 4 - u / 4 * Math.abs(d - c) / u + "px").find(".ho-h-tt").css("font-size", 1.875 - .875 * Math.abs(d - c) / u + "rem"), x.find("li").eq(H).css("width", 2 * u / 4 - u / 4 * Math.abs(d - c) / u + "px").find(".ho-h-to").css("font-size", .9375 - .1875 * Math.abs(d - c) / u + "rem"), x.find("li").eq(h).css("width", u / 4 + u / 4 * Math.abs(d - c) / u + "px").find(".ho-h-tt").css("font-size", 1 + .875 * Math.abs(d - c) / u + "rem"), x.find("li").eq(h).css("width", u / 4 + u / 4 * Math.abs(d - c) / u + "px").find(".ho-h-to").css("font-size", .75 + .1875 * Math.abs(d - c) / u + "rem")) : (g = H + 1, x.find("li").eq(H).css("width", 2 * u / 4 - u / 4 * Math.abs(d - c) / u + "px").find(".ho-h-tt").css("font-size", 1.875 - .875 * Math.abs(d - c) / u + "rem"), x.find("li").eq(H).css("width", 2 * u / 4 - u / 4 * Math.abs(d - c) / u + "px").find(".ho-h-to").css("font-size", .9375 - .1875 * Math.abs(d - c) / u + "rem"), x.find("li").eq(g).css("width", u / 4 + u / 4 * Math.abs(d - c) / u + "px").find(".ho-h-tt").css("font-size", 1 + .875 * Math.abs(d - c) / u + "rem"), x.find("li").eq(g).css("width", u / 4 + u / 4 * Math.abs(d - c) / u + "px").find(".ho-h-to").css("font-size", .75 + .1875 * Math.abs(d - c) / u + "rem"))
             }, !1);
             var k = null,
                 l = null;
@@ -335,7 +336,26 @@
                 a.productList[0].lowestInvestAmount;
                 B.html(a.productList[0].productName);
                 var b = a.productList[0].gradeName;
-                E.html("活期" == b ? "每天" : b), J = document.getElementById("ruleCot"), K = J.getContext("2d"), J.width = 2 * J.offsetWidth, J.height = 2 * J.offsetHeight, X.option.canvasWidth = 2 * J.offsetWidth, X.option.canvasHeight = 2 * J.offsetHeight, J.style.width = "", J.style.height = "", X.option.argsStartX = X.returnX(X.option.defaultMon), X.option.ruleStartX = X.option.argsStartX, X.draw(), J.addEventListener("touchstart", X.preDraw, !1), J.addEventListener("touchmove", X.move, !1), J.addEventListener("touchend", X.correct, !1)
+                E.html("活期" == b ? "每天" : b),
+                    J = document.getElementById("ruleCot"),
+                    K = J.getContext("2d"),
+                    J.width = 2 * J.offsetWidth,
+                    J.height = 2 * J.offsetHeight,
+                    X.option.canvasWidth = 2 * J.offsetWidth,
+                    X.option.canvasHeight = 2 * J.offsetHeight,
+                    J.style.width = "",
+                    J.style.height = "",
+                    X.option.argsStartX = X.returnX(X.option.defaultMon),
+                    X.option.ruleStartX = X.option.argsStartX,
+                    X.draw(),
+                    J.addEventListener("touchstart",
+                        X.preDraw,
+                        !1)
+                    ,
+                    J.addEventListener("touchmove",
+                        X.move, !1),
+                    J.addEventListener("touchend",
+                        X.correct, !1)
             },
             returnX: function(a) {
                 return X.option.canvasWidth / X.option.ruleCellWidth / 2 - a / X.option.ruleCellVal
@@ -398,9 +418,13 @@
                 }
             },
             move: function(a) {
-                if (a.preventDefault(), window.cancelAnimationFrame(V), X.option.totalMoney < s.getStore("buyData").lowestInvestAmount && (X.option.ruleStartX = X.returnX(s.getStore("buyData").lowestInvestAmount), D.html("起购金额1000元"), X.option.stopDraw = !1, C.show()), X.option.totalMoney > X.option.dMaxMoney) X.option.ruleStartX = X.returnX(X.option.dMaxMoney), D.html("单笔最高19.9万元"), X.option.stopDraw = !1, C.show();
+                if (a.preventDefault(),
+                        window.cancelAnimationFrame(V),
+                    X.option.totalMoney < s.getStore("buyData").lowestInvestAmount && (X.option.ruleStartX = X.returnX(s.getStore("buyData").lowestInvestAmount), D.html("起购金额1000元"), X.option.stopDraw = !1, C.show()), X.option.totalMoney > X.option.dMaxMoney) X.option.ruleStartX = X.returnX(X.option.dMaxMoney), D.html("单笔最高19.9万元"), X.option.stopDraw = !1, C.show();
                 else {
-                    X.option.ruleStartX = (Math.round(1e3 * X.option.ruleStartX) + (Math.round(100 * a.touches[0].clientX) - Math.round(100 * X.option.pointStartX))) / 1e3, X.option.pointStartX = Math.round(100 * a.touches[0].clientX) / 100;
+                    X.option.ruleStartX =
+                        (Math.round(1e3 * X.option.ruleStartX) + (Math.round(100 * a.touches[0].clientX) - Math.round(100 * X.option.pointStartX))) / 1e3,
+                    X.option.pointStartX = Math.round(100 * a.touches[0].clientX) / 100;
                     var b = new Date;
                     Q = b.getTime(),
                         S = a.changedTouches[0].clientX,
