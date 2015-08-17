@@ -1,6 +1,6 @@
 $(function(){
     $.CONSTANT = {
-        defaultMoney :10000,
+        defaultMoney :7900,
         preMoved:0
     };
     $.tools = {};
@@ -16,33 +16,32 @@ $(function(){
             };
         },
         getColumnArray:function(startPosition){
-        var arr = [];
-        var zz = startPosition;
-        var all=0;
-        var startArr = [],middleArr = [],endArr = [];
-        for(var i=zz;i<10;i++){
-            startArr.push(i);
-        }
-        middleArr.push(startArr);
-        for(var m=0;m<5;m++){
-            var innerarr = [];
-            for(var n=0;n<10;n++){
-                innerarr.push(n);
+            var arr = [];
+            var zz = startPosition;
+            var all=0;
+            var startArr = [],middleArr = [],endArr = [];
+            for(var i=zz;i<10;i++){
+                startArr.push(i);
             }
-            middleArr.push(innerarr);
-        }
-        for(var z=0;z<10-zz;z++){
-            endArr.push(z);
-        }
-        middleArr.push(endArr);
+            middleArr.push(startArr);
+            for(var m=0;m<5;m++){
+                var innerarr = [];
+                for(var n=0;n<10;n++){
+                    innerarr.push(n);
+                }
+                middleArr.push(innerarr);
+            }
+            for(var z=0;z<zz;z++){
+                endArr.push(z);
+            }
+            middleArr.push(endArr);
 
-        return middleArr;
-
-    }
+            return middleArr;
+        }
     });
     var canvas = $("#panel")[0];
     var context = canvas.getContext('2d');
-    var CONSTANT_SUM = 100000;
+    var CONSTANT_SUM = 99000;
     var CONSTANT_UNIT = 100,
         times = CONSTANT_SUM / CONSTANT_UNIT;
     //绘制高低不平的那个
@@ -130,19 +129,32 @@ $(function(){
         var touch = event.touches[0];
             startY = touch.pageY;
             startX = touch.pageX;
+        store_pre = startX;
+        drawRuleBiao(context, $.CONSTANT.defaultMoney,obj);
     });
     canvas.addEventListener("touchmove",function(e){
         var touch = event.touches[0];
             endX = touch.pageX;
+        moved = true;
+        if(endX - store_pre >= 0){
+            moved = true;
+            console.log('true');
+        }else{
+            moved = false;
+            console.log('false');
+        }
+        store_pre = touch.pageX;
 
-        var every = 14;/*$("body").width() / 60*/ ;
         var context = $("#panel")[0].getContext("2d");
-        var moved = endX - startX;
         context.clearRect(0,0,$("body").width()*2,500);
 
-        $.CONSTANT.defaultMoney = $.CONSTANT.defaultMoney + 100;
-        console.log(Math.floor(moved/every));
-        console.log($.CONSTANT.defaultMoney);
+        if(moved){
+            $.CONSTANT.defaultMoney = $.CONSTANT.defaultMoney - 100;
+        }else{
+            $.CONSTANT.defaultMoney = $.CONSTANT.defaultMoney + 100;
+        }
+
+
        // console.log($.CONSTANT.defaultMoney);
         var obj = drawRuleBorder(context);
         drawRuleBiao(context, $.CONSTANT.defaultMoney,obj);
@@ -151,18 +163,25 @@ $(function(){
         $("#money").html($.CONSTANT.defaultMoney);
     });
     canvas.addEventListener("touchend",function(e){
-
-
+        drawRuleBiao(context, $.CONSTANT.defaultMoney,obj);
     });
     function getMoneyArray(money){
         var money = Math.floor(money /1000)*1000;
-        return [
+        if(money - 3000 ==0){
+            return [
+                0,1000,2000,3000
+            ]
+        }
+        else{
+            return [
                 parseInt(money) - 2000,
                 parseInt(money) - 1000,
                 parseInt(money),
                 parseInt(money) + 1000,
                 parseInt(money) + 2000,
                 parseInt(money) + 3000
-                ]
+            ]
+        }
+
     }
 })
