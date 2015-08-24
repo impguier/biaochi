@@ -389,7 +389,8 @@
                             K.moveTo(L, M - X.option.ruleCellHeightl), K.lineTo(L, M)
                         } else {
                             if (L > 320 && N > 199e3) continue;
-                            K.moveTo(L, M - X.option.ruleCellHeighth), K.lineTo(L, M), X.drawText(L, M - 2.2 * X.option.ruleCellHeighth, N)
+                            K.moveTo(L, M - X.option.ruleCellHeighth), K.lineTo(L, M),
+                            X.drawText(L, M - 2.2 * X.option.ruleCellHeighth, N)
                         }
                         if (b++, b >= X.option.canvasWidth / X.option.ruleCellWidth) break
                     }
@@ -418,9 +419,15 @@
                 }
             },
             move: function(a) {
-                if (a.preventDefault(),
+                if (
+                        a.preventDefault(),
                         window.cancelAnimationFrame(V),
-                    X.option.totalMoney < s.getStore("buyData").lowestInvestAmount && (X.option.ruleStartX = X.returnX(s.getStore("buyData").lowestInvestAmount), D.html("起购金额1000元"), X.option.stopDraw = !1, C.show()), X.option.totalMoney > X.option.dMaxMoney) X.option.ruleStartX = X.returnX(X.option.dMaxMoney), D.html("单笔最高19.9万元"), X.option.stopDraw = !1, C.show();
+                        X.option.totalMoney < s.getStore("buyData").lowestInvestAmount &&
+                       (X.option.ruleStartX = X.returnX(s.getStore("buyData").lowestInvestAmount),
+                           D.html("起购金额1000元"), X.option.stopDraw = !1, C.show()),
+                        X.option.totalMoney > X.option.dMaxMoney
+                    )
+                    X.option.ruleStartX = X.returnX(X.option.dMaxMoney), D.html("单笔最高19.9万元"), X.option.stopDraw = !1, C.show();
                 else {
                     X.option.ruleStartX =
                         (Math.round(1e3 * X.option.ruleStartX) + (Math.round(100 * a.touches[0].clientX) - Math.round(100 * X.option.pointStartX))) / 1e3,

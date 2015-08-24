@@ -4,6 +4,19 @@ body {
 }
 body #container {
   position: absolute;
-  top: 50%;
-  width: 100%;
+  width: 20rem;
+  top: 40%;
+}
+body #container form input {
+  border: none;
+  height: 2rem;
+  width: 8rem;
+  border-bottom: 2px solid orangered;
+  margin-left: 6rem;
+  font-size: 1.4rem;
+  text-align: center;
+  color: orangered;
+}
+body #container form canvas {
+  height: 5rem;
 }
