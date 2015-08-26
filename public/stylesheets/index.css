@@ -3,6 +3,7 @@ body {
   margin: 0;
 }
 body #container {
+  font-family: HelveticaNeue-Bold, SimHei, Arial;
   position: absolute;
   width: 20rem;
   top: 40%;
@@ -16,7 +17,9 @@ body #container form input {
   font-size: 1.4rem;
   text-align: center;
   color: orangered;
+  font-family: HelveticaNeue-Bold, SimHei, Arial;
+  -webkit-font-smoothing: antialiased;
 }
 body #container form canvas {
-  height: 5rem;
+  height: 3rem;
 }
