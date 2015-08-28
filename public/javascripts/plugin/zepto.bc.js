@@ -3,7 +3,7 @@
         minMoney:1000,
         currMoney:0,
         MAxMoney:'',
-        initMoney:90000,
+        initMoney:10000,
         printpanel:"#panel",
         inputDom:"#money",
         setStroeMonen:function(m){
@@ -13,37 +13,42 @@
     var BROWSER_WIDTH = window.innerWidth;
     var CANVAS_HEIGHT =  0 ;
     var V = {
-        ew : (BROWSER_WIDTH / 60 )* 2,
-        em : 100 / BROWSER_WIDTH / 60 * 2
+        ew : 14,
+        em : 1e2,
+        cw : 0,
+        ch : 0
     };
     $.fn.makebc = function(opts){
         var opts = $.extend(settings,opts);
         opts.currMoney = opts.initMoney;
         var ctx  = $(opts.printpanel)[0].getContext('2d');
-        CANVAS_HEIGHT =  ctx.canvas.height;
+
         var methods = {
             money2position:function(money){
-                var a = money / 100,b = a % 10 ;
-                b = b - parseInt(b);
-                return (1-b);
+                return V.cw / V.ew / 2 - money / V.em;
             },
-            draw:function(sX,sY,m){
+            draw:function(sX,sY){
+                ctx.save();
+                ctx.strokeStyle = 'rgb(211,211,211)';
+                ctx.moveTo(0,ctx.canvas.height - 1 );
+                ctx.lineTo(ctx.canvas.width,ctx.canvas.height - 1 );
+                ctx.stroke();
+                ctx.restore();
+
                 ctx.strokeStyle = "rgb(211,211,211)";
-                var curMoney = m;
-                var startMoney = curMoney - 3000;
-                console.log(sX);
-                for(var i=sX;i<BROWSER_WIDTH *2 / (V.ew);i++){
+
+                for(var i=sX;i< V.cw *2/ (V.ew);i++){
+                    var x = V.ew * i ;
                     ctx.beginPath();
-                    ctx.moveTo(V.ew * i , sY );
-                    if(Math.floor(((startMoney + i * 100) /100) % 10) ==0){
-                        ctx.lineTo(V.ew * i , sY - CANVAS_HEIGHT *.25);
+                    ctx.moveTo(x , sY );
+                    if(parseInt(i - sX) % 10){
+                        ctx.lineTo(x , sY - V.ch *.1);
                     }else{
-                        ctx.lineTo(V.ew * i , sY - CANVAS_HEIGHT *.1);
+                        ctx.lineTo(x , sY - V.ch *.25);
+                        methods.drawText(parseInt(i - sX) * V.em, x , sY - V.ch * .4);
                     }
                     ctx.stroke();
                     ctx.closePath();
-                    if(Math.floor(((startMoney + i * 100) /100) % 10) ==0){
-                        methods.drawText(Math.floor((startMoney + i * 100) /100)*100, V.ew * i,sY - CANVAS_HEIGHT *.35 );}
                 }
 
             },
@@ -59,16 +64,13 @@
             },
             drawText:function(text, x, y){
                 ctx.save();
-                ctx.beginPath();
-                ctx.font = '1.2rem HelveticaNeue-Bold, SimHei, Arial';
+                ctx.font = 'Bold 24px Microsof YaHei';
+                ctx.fillStyle = 'rgb(150,150,150)';
+                ctx.textBaseline = 'top'
                 ctx.textAlign = 'center';
-                ctx.fillStyle = 'rgb(200,200,200)';
                 ctx.fillText(text,x,y);
-                ctx.closePath();
                 ctx.restore();
             }
-
-
         };
 
         this.each(function(){
@@ -77,20 +79,18 @@
             var sX  = methods.money2position(opts.initMoney),
                 sY  = canvas.height;
 
-            methods.draw(sX,sY,opts.currMoney);
+            methods.draw(sX,sY);
             methods.drawCenter();
             this.addEventListener('touchstart',function(event){
                 startPositionX = movePositionX = event.touches[0].pageX;
                 var currMoney = opts.currMoney;
                 var sX  = methods.money2position(currMoney),
-                    sY  = canvas.height;
+                    sY  = V.ch;
                 ctx.clearRect(0,0,canvas.width,canvas.height);
                 methods.draw(sX,sY,currMoney);
                 methods.drawCenter();
             });
             this.addEventListener('touchmove',function(event){
-
-                // movePositionX - event.touches[0].pageX
                 var c = movePositionX - startPositionX;
                 var boo = c <= 0 ?1:-1;
                 var moved = 0;
@@ -103,15 +103,12 @@
 
                     var sX  = methods.money2position(opts.currMoney + om),
                         sY  = canvas.height;
-                    // console.log(sX);
                     ctx.clearRect(0,0,canvas.width,canvas.height);
                     methods.draw(sX,sY,Math.floor(opts.currMoney + om));
                     methods.drawCenter();
-                    // }
                 }else{
 
                 }
-                // $(opts.inputDom).val(parseInt(opts.currMoney )+ moved);
                 movePositionX = event.touches[0].pageX;
 
             });
@@ -121,6 +118,9 @@
         });
         function init(opts){
             $(opts.printpanel)[0].width = BROWSER_WIDTH*2;
+            $(opts.printpanel)[0].style.height = 75 + "px";
+            V.cw = ctx.canvas.width;
+            V.ch = ctx.canvas.height;
             $(opts.inputDom).val(opts.initMoney).change(function(){
                 var canvas = $(opts.printpanel)[0];
                 var ctx    = canvas.getContext('2d');
