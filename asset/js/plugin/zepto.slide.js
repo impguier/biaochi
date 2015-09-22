@@ -50,21 +50,19 @@
 
         $.makeSlide.draw(ctx,settings.initDate);
 
-        canvas.addEventListener('touchstart',function(){
+        canvas.addEventListener('touchstart',function(event){
             startPositionX = movePositionX = event.touches[0].pageX;
         });
-        canvas.addEventListener('touchmove',function(){
-            var c = movePositionX - startPositionX;
-            var boo = c <= 0 ?1:-1;
-            var cha = (c / C.ow > 1 ?1:c / C.ow) * boo;
-           // if( movePositionX - startPositionX ){
-                 settings.currentDate+=cha;
-                $.makeSlide.draw(ctx,settings.currentDate);
-           // }
+        canvas.addEventListener('touchmove',function(event){
+            var c = movePositionX - event.touches[0].pageX;
+            var c1 = movePositionX - startPositionX;
+
+            settings.currentDate+=c/ C.ow;
+            $.makeSlide.draw(ctx,settings.currentDate);
             movePositionX = event.touches[0].pageX;
         });
         canvas.addEventListener('touchend',function(){
-
+            $.makeSlide.draw(ctx,Math.round(settings.currentDate));
         });
 
     }
