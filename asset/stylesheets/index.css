@@ -1,0 +1,49 @@
+@font-face {
+  font-family: HelveticaNeue-Bold;
+  src: url('../fonts/HelveticaNeue-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+body #container {
+  font-family: HelveticaNeue-Bold, SimHei, Arial;
+  position: absolute;
+  width: 20rem;
+  top: 40%;
+}
+body #container form input {
+  border: none;
+  height: 2rem;
+  width: 8rem;
+  border-bottom: 2px solid orangered;
+  margin-left: 6rem;
+  font-size: 1.2rem;
+  text-align: center;
+  color: orangered;
+  font-family: HelveticaNeue-Bold, SimHei, Arial;
+  -webkit-font-smoothing: antialiased;
+}
+body #container form canvas {
+  height: 3rem;
+  font-family: HelveticaNeue-Bold, SimHei, Arial;
+  -webkit-font-smoothing: antialiased;
+}
+body #container div.title {
+  width: 5rem;
+  margin: 0 auto;
+  display: flex;
+}
+body #container div.title span.icon-money {
+  display: block;
+  width: 1.2rem;
+  height: 1.5rem;
+  background: url("icon/icon-money.png") no-repeat 0 0 scroll;
+  background-size: 100%;
+}
+body #container div.title span.text {
+  font-size: 0.75rem;
+  color: #e73c47;
+}

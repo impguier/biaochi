@@ -13,5 +13,12 @@
     "jade": "~1.9.2",
     "morgan": "~1.5.3",
     "serve-favicon": "~2.2.1"
-  }
+  },
+    "devDependencies": {
+        "gulp": "^3.9.0",
+        "gulp-less": "^3.0.3",
+        "gulp-plumber": "^1.0.1",
+        "gulp-watch": "^4.3.5",
+        "livereload": "^0.3.7"
+    }
 }

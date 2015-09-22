@@ -1,18 +1,39 @@
 doctype html
 html
     head
-        title= title
+        title= 收益计算器
         meta(charset='utf-8')
         meta(name='viewport',content='width=device-width,initial-scale=1,user-scalable=no;')
-        link(rel='stylesheet', href='/stylesheets/index.css')
+        link(rel='stylesheet', href='/css/index.css')
 
     body
-      div#container(style="")
+      div#container
+          div.title(style='width:5rem;')
+            span.icon-money
+            span.text &nbsp;我要投(元)
+          div.alertLayer
           form
             input(type='text' name='money' id='money')
             canvas#panel(style='width:100%;') 您的浏览器不支持canvas
-      script(src="/javascripts/lib/zepto/zepto.js")
-      script(src="/javascripts/lib/zepto/zepto.all.js")
-      script(src='/javascripts/plugin/zepto.bc.js')
-      script(src='/javascripts/plugin/rem.js')
-      script(src='javascripts/i.js')
+            span.icon-bi
+          div.title
+            span.icon-date
+            span.text &nbsp;出借期限(月)
+          form
+            canvas#pannel2(style='width:100%') 您的浏览器不支持canvas
+          div.title
+              span.icon-date
+              span.text &nbsp;出借期限(月)
+          ul.profilelist
+              li 13%
+              li 14%
+              li 15%
+              li 16%
+              li 17%
+              li 18%
+      script(src="/js/lib/zepto/zepto.js")
+      script(src="/js/lib/zepto/zepto.all.js")
+      script(src='/js/plugin/zepto.bc.js')
+      script(src='/js/plugin/zepto.slide.js')
+      script(src='/js/plugin/rem.js')
+      script(src='js/i.js')
