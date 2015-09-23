@@ -56,10 +56,31 @@ body{
         height:1.1rem;
       }
     }
-    canvas#pannel2{
+    #slider_wrap{
       width:20rem;
-      height:4rem;
+      overflow:hidden;
+      #slider{
+        width:152rem;
+        height:4rem;
+        overflow:hidden;
+        list-style:none;
+        margin:0;
+        padding:0;
+        li{
+          float:left;
+          width:4rem;
+          height:4rem;
+          line-height:4rem;
+          font-size: 1rem;
+          text-align:center;
+          color:#999999;
+        }
+        li.active{
+          color:#e73c47;
+        }
+      }
     }
+
     div.title{
       width:6rem;
       margin:0 auto;

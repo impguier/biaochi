@@ -59,9 +59,29 @@ body #container form span.icon-bi {
   width: 1.1rem;
   height: 1.1rem;
 }
-body #container canvas#pannel2 {
+body #container #slider_wrap {
   width: 20rem;
+  overflow: hidden;
+}
+body #container #slider_wrap #slider {
+  width: 152rem;
   height: 4rem;
+  overflow: hidden;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+body #container #slider_wrap #slider li {
+  float: left;
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+  font-size: 1rem;
+  text-align: center;
+  color: #999999;
+}
+body #container #slider_wrap #slider li.active {
+  color: #e73c47;
 }
 body #container div.title {
   width: 6rem;

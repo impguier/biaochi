@@ -98,7 +98,37 @@
                 i = b.getTime()
             }, !1), document.getElementById("gearCot").addEventListener("touchmove", function(a) {
                 d = a.touches[0].clientX,
-                    x.find("ul").css("margin-left", -(H - 1) * (u / 4) + (d - c) / 4), d - c > 0 ? (h = H - 1, x.find("li").eq(H).css("width", 2 * u / 4 - u / 4 * Math.abs(d - c) / u + "px").find(".ho-h-tt").css("font-size", 1.875 - .875 * Math.abs(d - c) / u + "rem"), x.find("li").eq(H).css("width", 2 * u / 4 - u / 4 * Math.abs(d - c) / u + "px").find(".ho-h-to").css("font-size", .9375 - .1875 * Math.abs(d - c) / u + "rem"), x.find("li").eq(h).css("width", u / 4 + u / 4 * Math.abs(d - c) / u + "px").find(".ho-h-tt").css("font-size", 1 + .875 * Math.abs(d - c) / u + "rem"), x.find("li").eq(h).css("width", u / 4 + u / 4 * Math.abs(d - c) / u + "px").find(".ho-h-to").css("font-size", .75 + .1875 * Math.abs(d - c) / u + "rem")) : (g = H + 1, x.find("li").eq(H).css("width", 2 * u / 4 - u / 4 * Math.abs(d - c) / u + "px").find(".ho-h-tt").css("font-size", 1.875 - .875 * Math.abs(d - c) / u + "rem"), x.find("li").eq(H).css("width", 2 * u / 4 - u / 4 * Math.abs(d - c) / u + "px").find(".ho-h-to").css("font-size", .9375 - .1875 * Math.abs(d - c) / u + "rem"), x.find("li").eq(g).css("width", u / 4 + u / 4 * Math.abs(d - c) / u + "px").find(".ho-h-tt").css("font-size", 1 + .875 * Math.abs(d - c) / u + "rem"), x.find("li").eq(g).css("width", u / 4 + u / 4 * Math.abs(d - c) / u + "px").find(".ho-h-to").css("font-size", .75 + .1875 * Math.abs(d - c) / u + "rem"))
+                    x.find("ul").css("margin-left", -(H - 1) * (u / 4) + (d - c) / 4),
+                    d - c > 0 ? (
+                        h = H - 1,
+                        x.find("li").eq(H)
+                            .css("width", 2 * u / 4 - u / 4 * Math.abs(d - c) / u + "px")
+                            .find(".ho-h-tt")
+                            .css("font-size", 1.875 - .875 * Math.abs(d - c) / u + "rem"),
+                        x.find("li").eq(H)
+                            .css("width", 2 * u / 4 - u / 4 * Math.abs(d - c) / u + "px")
+                            .find(".ho-h-to")
+                            .css("font-size", .9375 - .1875 * Math.abs(d - c) / u + "rem"),
+                        x.find("li").eq(h)
+                            .css("width", u / 4 + u / 4 * Math.abs(d - c) / u + "px")
+                            .find(".ho-h-tt").css("font-size", 1 + .875 * Math.abs(d - c) / u + "rem"),
+                        x.find("li").eq(h)
+                            .css("width", u / 4 + u / 4 * Math.abs(d - c) / u + "px")
+                            .find(".ho-h-to")
+                            .css("font-size", .75 + .1875 * Math.abs(d - c) / u + "rem")) :
+                                    (g = H + 1, x.find("li").eq(H)
+                                        .css("width", 2 * u / 4 - u / 4 * Math.abs(d - c) / u + "px")
+                                        .find(".ho-h-tt").css("font-size", 1.875 - .875 * Math.abs(d - c) / u + "rem"),
+                                    x.find("li").eq(H)
+                                        .css("width", 2 * u / 4 - u / 4 * Math.abs(d - c) / u + "px")
+                                        .find(".ho-h-to")
+                                        .css("font-size", .9375 - .1875 * Math.abs(d - c) / u + "rem"),
+                                    x.find("li").eq(g)
+                                        .css("width", u / 4 + u / 4 * Math.abs(d - c) / u + "px")
+                                        .find(".ho-h-tt").css("font-size", 1 + .875 * Math.abs(d - c) / u + "rem"),
+                                    x.find("li").eq(g)
+                                        .css("width", u / 4 + u / 4 * Math.abs(d - c) / u + "px")
+                                        .find(".ho-h-to").css("font-size", .75 + .1875 * Math.abs(d - c) / u + "rem"))
             }, !1);
             var k = null,
                 l = null;

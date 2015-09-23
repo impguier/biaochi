@@ -1,4 +1,4 @@
 (function($){
     $("#panel").makebc();
-    $("#pannel2").makeSlide();
+    $("#slider").makeSlide();
 })(Zepto)

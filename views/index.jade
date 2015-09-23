@@ -19,8 +19,12 @@ html
           div.title
             span.icon-date
             span.text &nbsp;出借期限(月)
-          form
-            canvas#pannel2(style='width:100%') 您的浏览器不支持canvas
+          div#slider_wrap
+              ul#slider
+                li &nbsp;
+                li &nbsp;
+                -for(var i=1;i<=36;i++)
+                 li=i
           div.title
               span.icon-date
               span.text &nbsp;出借期限(月)
