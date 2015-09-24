@@ -23,11 +23,7 @@
           }
       },
       move:function(target,num,c,c1){
-        var $childrens = target.children("li"),
-            $preve = $childrens.eq(num-1),
-            $this = $childrens.eq(num),
-            $next = $childrens.eq(num+1),
-            ml = parseFloat(target.css('margin-left'));
+        var ml = parseFloat(target.css('margin-left'));
 
           if(c>0){
               //left

@@ -83,6 +83,26 @@ body #container #slider_wrap #slider li {
 body #container #slider_wrap #slider li.active {
   color: #e73c47;
 }
+body #container .profitlist_wrap {
+  width: 20rem;
+  overflow: hidden;
+}
+body #container .profitlist_wrap ul#profitlist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: 4rem;
+}
+body #container .profitlist_wrap ul#profitlist li {
+  float: left;
+  width: 6.6rem;
+  height: 4rem;
+  line-height: 4rem;
+  text-align: center;
+}
+body #container .profitlist_wrap ul#profitlist li.active {
+  color: #e73c47;
+}
 body #container div.title {
   width: 6rem;
   margin: 0 auto;
