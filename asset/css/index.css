@@ -103,6 +103,12 @@ body #container .profitlist_wrap ul#profitlist li {
 body #container .profitlist_wrap ul#profitlist li.active {
   color: #e73c47;
 }
+body #container .profitlist_wrap ul.trans {
+  transition: margin-left 0.2s linear 0s;
+  -webkit-transition: margin-left 0.2s linear 0s;
+  -ms-transition: margin-left 0.2s linear 0s;
+  -moz-transition: margin-left 0.2s linear 0s;
+}
 body #container div.title {
   width: 6rem;
   margin: 0 auto;

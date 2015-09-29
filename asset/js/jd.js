@@ -394,6 +394,7 @@
                 X.option.ruleStartX = X.returnX(a), X.draw()
             },
             aniDraw: function(a, b) {
+                console.log(a+"-------------"+ b)
                 var c = 6;
                 V = function() {
                     if (a > .1) {
@@ -462,6 +463,7 @@
                     X.option.ruleStartX =
                         (Math.round(1e3 * X.option.ruleStartX) + (Math.round(100 * a.touches[0].clientX) - Math.round(100 * X.option.pointStartX))) / 1e3,
                     X.option.pointStartX = Math.round(100 * a.touches[0].clientX) / 100;
+
                     var b = new Date;
                     Q = b.getTime(),
                         S = a.changedTouches[0].clientX,
@@ -469,11 +471,13 @@
                         U > 4 ? X.option.ruleStartX > X.option.canvasWidth / X.option.ruleCellWidth / 2 ? (X.option.ruleStartX = X.option.canvasWidth / X.option.ruleCellWidth / 2,
                             X.option.stopDraw = !0) : T = !0 : (T = !1, X.option.ruleStartX > X.option.canvasWidth / X.option.ruleCellWidth / 2 ? (X.option.ruleStartX = X.option.canvasWidth / X.option.ruleCellWidth / 2, X.option.stopDraw = !0) : (X.option.stopDraw = !1,
                             X.draw()))
+
                 }
             },
             correct: function(a) {
                 if (T) {
                     var b = S - R > 0 ? !0 : !1;
+
                     X.option.stopDraw = !1, X.aniDraw(Math.round(U), b)
                 }
                 X.option.totalMoney < s.getStore("buyData").lowestInvestAmount && (X.option.ruleStartX = X.returnX(s.getStore("buyData").lowestInvestAmount), D.html("起购金额1000元"), X.option.stopDraw = !1, C.show(), X.draw()), X.option.totalMoney > X.option.dMaxMoney && (X.option.ruleStartX = X.returnX(X.option.dMaxMoney), D.html("单笔最高19.9万元"), X.option.stopDraw = !1, C.show(), X.draw())
