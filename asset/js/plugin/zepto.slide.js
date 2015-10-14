@@ -4,13 +4,14 @@
         maxDate:36,
         initDate:6,
         onePage:5,
-        currentDate:36
+        currentDate:18
     };
     BROWSER_WIDTH = document.documentElement.clientWidth;
     var C = {
         cw:document.documentElement.clientWidth * 2,
-        ow: document.documentElement.clientWidth / 5 * 2,
-        rootFz : null
+        ow: document.documentElement.clientWidth * 2 / 5 ,
+        rootFz : null,
+        ew : 4
     };
     $.makeSlide = {
       init:function(target,num){
@@ -24,63 +25,52 @@
       },
       move:function(target,num,c,c1){
         var ml = parseFloat(target.css('margin-left'));
-
+        var currentDate = settings.currentDate;
           if(c>0){
               //left
-              target.css("margin-left",ml -(c / 16 * C.rootFz) +"rem");
 
-              if(ml <= -((settings.maxDate -1)* 4)){
+              //target.css("margin-left",ml - C.ew +"rem");
+
+              /*if(ml <= -((settings.maxDate -1)* 4)){
                   target.animate({
                       "margin-left":-(settings.maxDate-1) * 4+"rem"
                   },500);
-              }
+              }*/
           }else{
               //right
-              target.css("margin-left",ml - (c / 16 * C.rootFz) +"rem");
-
-              if(ml > 0){
-                  target.animate({
-                      "margin-left":"0rem"
-                  },500);
-              }
+              
           }
 
       },
         touchend:function($target){
-            var ml = parseFloat($target.css("margin-left"));
-            var num = Math.abs(Math.floor( ml / 4));
-            $target.find(".active").removeClass('active');
-            $target.css({
-                'margin-left':- num * 4+"rem"
-            }).children("li").eq(num+2).animate({
-                "font-size":'2rem'
-            },500).addClass("active").siblings("li").css('font-size','1rem');
-            settings.currentDate = num+1;
+            var ml = Number($target.css("margin-left").replace("rem",""));
+            var ps = Math.round(ml / C.ew) ;
+            $target.animate({
+                "margin-left":(ps) * C.ew + "rem"
+            },400,function(){
+                $target.children().eq(Math.abs(ps-2)).animate({
+                    "font-size":'2rem'
+                },100).addClass("active");
+            });
+
+            settings.currentDate = Math.abs(ps-3);
+
         },
         refont:function($target){
-            var index = settings.currentDate;
-            var ln = $target.children().length;
-            var oneFont = 1.5 / index;
-            for(var i=0;i<index;i++){
-                $target.children().eq(i).css({
-                    "font-size":oneFont * i + "rem"
-                });
-            }
-            console.log(index);
-            for(var x = ln;x > index;x--){
-                $target.children().eq(x).css({
-                    "font-size":oneFont * x + "rem"
-                });
-                console.log(x);
-            }
+            $target.children().each(function(){
+                $(this).css("font-size","1rem").removeClass("active");
+            });
         }
     };
     $.fn.makeSlide = function(){
         var $this = $(this);
+        var initTime = 0;
         $.makeSlide.init($this,settings.currentDate);
 
         this[0].addEventListener('touchstart',function(event){
             startPositionX = movePositionX = event.touches[0].pageX;
+            initTime = new Date().getTime();
+            $.makeSlide.refont($(this));
         });
         this[0].addEventListener('touchmove',function(event){
             event.preventDefault();
@@ -90,7 +80,34 @@
             movePositionX = event.touches[0].pageX;
         });
         this[0].addEventListener('touchend',function(){
-            $.makeSlide.touchend($this);
+            var $target =  $(this);
+            var endTime = new Date().getTime();
+            var time = endTime - initTime ;
+            if (time < 500) {
+                var i = Math.round(Math.round(movePositionX - startPositionX) / C.ow);
+                var ml = parseFloat($this.css('margin-left'));
+                var moveMl = ml+i*4 ;
+                if(moveMl > 0){
+                    moveMl = 0 ;
+                }
+                if(moveMl < -((settings.maxDate -1)* 4)){
+                    moveMl = (settings.maxDate -1)* 4 ;
+                }
+                $this.animate({
+                    "marginLeft":moveMl+ "rem"
+                },400,function(){
+                    $.makeSlide.touchend($this);
+                });
+
+
+            }else{
+                if(movePositionX - startPositionX > 0){
+                    settings.currentDate +=1;
+                }else{
+                    settings.currentDate -=1;
+                }
+
+            }
         });
 
     }

@@ -1,13 +1,14 @@
 (function($){
     var settings = {
         data:[14,15,16,17],
-        currentProfit:15,
+        currentProfit:17,
         onePageShow:3,
-        currentIndex:2
+        currentIndex:null
     };
     var CONTSTANT = {
         ow : 20 / settings.onePageShow,
-        ww : $(window).width()
+        ww : $(window).width(),
+        ew : $(window).width() / 6
     };
     $.specSlider = {
         init:function(target){
@@ -21,7 +22,7 @@
                     break;
                 }
             }
-            settings.currentIndex = i;
+            settings.currentIndex = i+1;
             target.css("margin-left",-_eq * CONTSTANT.ow + "rem").children().eq(_eq+1).addClass("active").css("font-size","2rem");
         },
         move:function(){
@@ -40,7 +41,7 @@
             event.preventDefault();
             var c = event.touches[0].pageX - moveP;
             moveP = event.touches[0].pageX;
-            var domIndex = settings.currentIndex+1;
+            var domIndex = settings.currentIndex;
             var ml = parseFloat($(this).css("margin-left")),
                 rootFz = parseFloat(document.documentElement.style.fontSize)/100;
             if( c > 0){
@@ -55,6 +56,7 @@
                 $this.children().eq(domIndex-1).css({
                     "font-size":1 + (a>=1?1:a) +"rem"
                 });
+                console.log(domIndex)
             }else{
                 var b = Math.abs((moveP-startP)/16*rootFz * ( 1 /6.6 ) );
                 $this.css({
@@ -73,40 +75,42 @@
             var cha = moveP - startP;
             var ml ;
 
-             if(cha > 0 && (Math.abs(cha) >=  CONTSTANT.ww/4)){
+             if(cha > 0 && (Math.abs(cha) >=  CONTSTANT.ew)){
                  //prev
                  $this.find(".active").removeClass('active');
-                 var currentIndex =  (settings.currentIndex + 1);
+                 var currentIndex = settings.currentIndex-1;
+                 if(currentIndex < 1){currentIndex=1}
                  $this.addClass("trans").css({
-                     "margin-left": - (currentIndex-2)*6.6+ "rem"
+                     "margin-left": - (currentIndex-1)*6.6+ "rem"
                  });
-                 $this.children().eq(currentIndex - 1).animate({
+                 $this.children().eq(currentIndex).animate({
                      "font-size":"2rem"
                  }).addClass("active");
-                 $this.children().eq(currentIndex).animate({
+                 $this.children().eq(currentIndex-1).animate({
                      "font-size":"1rem"
                  });
-                 settings.currentIndex = currentIndex - 2;
+                 settings.currentIndex = currentIndex;
              }
-            if(cha > 0 && (Math.abs(cha) <  CONTSTANT.ww/4)){
+            if(cha > 0 && (Math.abs(cha) <  CONTSTANT.ew)){
                 //prev
 
-                var currentIndex =  (settings.currentIndex + 1);
+                var currentIndex = settings.currentIndex - 1 ;
                 $this.addClass("trans").css({
-                    "margin-left": - (currentIndex-2)*6.6+ "rem"
+                    "margin-left": - (currentIndex)*6.6+ "rem"
                 });
-                $this.children().eq(currentIndex - 1).animate({
+                $this.children().eq(currentIndex+1).animate({
                     "font-size":"2rem"
-                }).addClass("active");
+                });
                 $this.children().eq(currentIndex).animate({
                     "font-size":"1rem"
                 });
-                settings.currentIndex = currentIndex - 2;
             }
-            if(cha < 0 && (Math.abs(cha) >  CONTSTANT.ww/4)){
+            if(cha < 0 && (Math.abs(cha) >  CONTSTANT.ew)){
                 //next
                 $this.find(".active").removeClass('active');
-                 var currentIndex =  (settings.currentIndex + 1);
+
+                 var currentIndex =  settings.currentIndex;
+                if(currentIndex >= settings.data.length){currentIndex=settings.data.length-1}
                  $this.addClass("trans").css({
                      "margin-left": - (currentIndex)*6.6+ "rem"
                  });
@@ -117,24 +121,22 @@
                      "font-size":"2rem"
                  }).addClass("active");
 
-                 settings.currentIndex = currentIndex ;
+                 settings.currentIndex = currentIndex + 1;
 
              }
-            if(cha < 0 && (Math.abs(cha) <  CONTSTANT.ww/4)){
+            if(cha < 0 && (Math.abs(cha) <  CONTSTANT.ew)){
                 //next
-                $this.find(".active").removeClass('active');
-                var currentIndex =  (settings.currentIndex);
+                var currentIndex =  settings.currentIndex;
                 $this.addClass("trans").css({
-                    "margin-left": - (currentIndex)*6.6+ "rem"
+                    "margin-left": - (settings.currentIndex-1)*6.6+ "rem"
                 });
-                $this.children().eq(currentIndex-1).animate({
+                $this.children().eq(currentIndex+1).animate({
                     "font-size":"1rem"
                 });
                 $this.children().eq(currentIndex).animate({
                     "font-size":"2rem"
-                }).addClass("active");
+                });
 
-                settings.currentIndex = currentIndex ;
             }
         });
     }
