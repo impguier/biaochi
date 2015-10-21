@@ -39,7 +39,6 @@
           $op.css({
               "font-size":2 - (a>=1?1:a)+"rem"
           });
-          console.log( $op.text())
           if(c > 0){
               $op.next().css({
                   "font-size":1 + (a>=1?1:a) +"rem"

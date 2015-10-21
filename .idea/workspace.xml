@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97991e30-25a5-43ce-baa8-7322c210349c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asset/js/i.js" afterPath="$PROJECT_DIR$/asset/js/i.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.jade" afterPath="$PROJECT_DIR$/views/index.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asset/js/plugin/zepto.bc.js" afterPath="$PROJECT_DIR$/asset/js/plugin/zepto.bc.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asset/js/plugin/zepto.slide.js" afterPath="$PROJECT_DIR$/asset/js/plugin/zepto.slide.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asset/js/plugin/zepto.specSlider.js" afterPath="$PROJECT_DIR$/asset/js/plugin/zepto.specSlider.js" />
     </list>
@@ -31,8 +27,8 @@
       <file leaf-file-name="index.jade" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/index.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-23.030304">
-              <caret line="39" column="20" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="20" />
+            <state vertical-scroll-proportion="-18.575758">
+              <caret line="32" column="40" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -51,28 +47,28 @@
       <file leaf-file-name="zepto.slide.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/asset/js/plugin/zepto.slide.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-112.25714">
-              <caret line="191" column="12" selection-start-line="191" selection-start-column="12" selection-end-line="191" selection-end-column="30" />
+            <state vertical-scroll-proportion="8.342857">
+              <caret line="41" column="20" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="zepto.specSlider.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="zepto.specSlider.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/asset/js/plugin/zepto.specSlider.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.6">
-              <caret line="26" column="51" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.8752969">
+              <caret line="146" column="26" selection-start-line="146" selection-start-column="26" selection-end-line="146" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="zepto.bc.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="zepto.bc.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/asset/js/plugin/zepto.bc.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2767221">
-              <caret line="177" column="46" selection-start-line="177" selection-start-column="46" selection-end-line="177" selection-end-column="46" />
+            <state vertical-scroll-proportion="-21.057142">
+              <caret line="186" column="27" selection-start-line="186" selection-start-column="27" selection-end-line="186" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -122,10 +118,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/views/index.jade" />
-        <option value="$PROJECT_DIR$/asset/js/plugin/zepto.slide.js" />
-        <option value="$PROJECT_DIR$/asset/js/plugin/zepto.specSlider.js" />
         <option value="$PROJECT_DIR$/asset/js/i.js" />
         <option value="$PROJECT_DIR$/asset/js/plugin/zepto.bc.js" />
+        <option value="$PROJECT_DIR$/asset/js/plugin/zepto.slide.js" />
+        <option value="$PROJECT_DIR$/asset/js/plugin/zepto.specSlider.js" />
       </list>
     </option>
   </component>
@@ -800,30 +796,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.030304">
-          <caret line="39" column="20" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset/js/plugin/zepto.slide.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-112.25714">
-          <caret line="191" column="12" selection-start-line="191" selection-start-column="12" selection-end-line="191" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset/js/plugin/zepto.specSlider.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.6">
-          <caret line="26" column="51" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asset/js/i.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -834,8 +806,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/asset/js/plugin/zepto.bc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2767221">
-          <caret line="177" column="46" selection-start-line="177" selection-start-column="46" selection-end-line="177" selection-end-column="46" />
+        <state vertical-scroll-proportion="-21.057142">
+          <caret line="186" column="27" selection-start-line="186" selection-start-column="27" selection-end-line="186" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.575758">
+          <caret line="32" column="40" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/js/plugin/zepto.slide.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="8.342857">
+          <caret line="41" column="20" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/js/plugin/zepto.specSlider.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8752969">
+          <caret line="146" column="26" selection-start-line="146" selection-start-column="26" selection-end-line="146" selection-end-column="26" />
           <folding />
         </state>
       </provider>

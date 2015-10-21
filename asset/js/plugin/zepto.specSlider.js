@@ -91,6 +91,7 @@
                      "font-size":"1rem"
                  });
                  settings.currentIndex = currentIndex;
+                 $("#rate").val(settings.currentIndex).trigger("change");
              }
             if(cha > 0 && (Math.abs(cha) <  CONTSTANT.ew)){
                 //prev
@@ -123,6 +124,7 @@
                  }).addClass("active");
 
                  settings.currentIndex = currentIndex + 1;
+                $("#rate").val(settings.currentIndex).trigger("change");
 
              }
             if(cha < 0 && (Math.abs(cha) <  CONTSTANT.ew)){
@@ -141,4 +143,7 @@
             }
         });
     }
+    $("#rate").change(function(){
+        calculateProfit();
+    })
 })(Zepto)
