@@ -175,6 +175,7 @@
                             $(opts.inputDom).val(finalMoney);
                             opts.setStroeMonen(finalMoney);
                             V.canAni = true;
+                            calculateProfit();
                             return;
                         }
                         if (i > 0 && i <= 1) {
@@ -182,6 +183,7 @@
                             $(opts.inputDom).val(finalMoney);
                             opts.setStroeMonen(finalMoney)
                             V.canAni = true;
+                            calculateProfit();
                             return;
                         }
 
@@ -193,7 +195,7 @@
                     window.requestAnimationFrame(animationDraw);
                 }
                 opts.setStroeMonen(parseInt($(opts.inputDom).val()));
-
+                calculateProfit();
             });
         });
         function init(opts) {
@@ -229,6 +231,7 @@
                     methods.drawCenter();
                     opts.currMoney = Number(domValue);
                 }
+                calculateProfit();
             });
         }
     }

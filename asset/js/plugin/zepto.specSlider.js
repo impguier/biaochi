@@ -24,6 +24,7 @@
             }
             settings.currentIndex = i+1;
             target.css("margin-left",-_eq * CONTSTANT.ow + "rem").children().eq(_eq+1).addClass("active").css("font-size","2rem");
+            $("#rate").val(settings.currentProfit);
         },
         move:function(){
 

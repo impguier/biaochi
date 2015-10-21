@@ -20,6 +20,7 @@ html
             span.icon-date
             span.text &nbsp;出借期限(月)
           div#slider_wrap
+              input(type="hidden" id="lenddate")
               ul#slider
                 li &nbsp;
                 li &nbsp;
@@ -27,14 +28,16 @@ html
                  li=i
           div.title
               span.icon-date
-              span.text &nbsp;出借期限(月)
+              span.text &nbsp;出借利率(月)
           div.profitlist_wrap
+            input(type="hidden" id="rate")
             ul#profitlist
               li &nbsp;
               li 14%
               li 15%
               li 16%
               li 17%
+          div#result
       script(src="/js/lib/zepto/zepto.js")
       script(src="/js/lib/zepto/zepto.all.js")
       script(src='/js/plugin/zepto.bc.js')
