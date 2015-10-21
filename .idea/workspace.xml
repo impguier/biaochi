@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97991e30-25a5-43ce-baa8-7322c210349c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asset/js/plugin/zepto.slide.js" afterPath="$PROJECT_DIR$/asset/js/plugin/zepto.slide.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asset/js/plugin/zepto.specSlider.js" afterPath="$PROJECT_DIR$/asset/js/plugin/zepto.specSlider.js" />
     </list>
     <ignored path="biaochi.iws" />
@@ -57,8 +57,8 @@
       <file leaf-file-name="zepto.specSlider.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/asset/js/plugin/zepto.specSlider.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8752969">
-              <caret line="146" column="26" selection-start-line="146" selection-start-column="26" selection-end-line="146" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.74821854">
+              <caret line="126" column="69" selection-start-line="126" selection-start-column="69" selection-end-line="126" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -830,8 +830,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/asset/js/plugin/zepto.specSlider.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8752969">
-          <caret line="146" column="26" selection-start-line="146" selection-start-column="26" selection-end-line="146" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.74821854">
+          <caret line="126" column="69" selection-start-line="126" selection-start-column="69" selection-end-line="126" selection-end-column="69" />
           <folding />
         </state>
       </provider>
