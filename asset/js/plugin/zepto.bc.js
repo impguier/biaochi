@@ -199,7 +199,7 @@
             });
         });
         function init(opts) {
-            $(opts.printpanel)[0].width = BROWSER_WIDTH * 2;
+            $(opts.printpanel)[0].width = BROWSER_WIDTH * window.devicePixelRatio;
             $(opts.printpanel)[0].style.height = 75 + "px";
             V.cw = ctx.canvas.width;
             V.ch = ctx.canvas.height;

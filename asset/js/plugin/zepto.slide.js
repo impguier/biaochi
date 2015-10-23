@@ -21,10 +21,10 @@
              "font-size":'2rem'
           }).addClass("active");
           settings.cindex = num+1;
-          window.onload = function(){
-              C.rootFz = parseFloat(document.documentElement.style.fontSize) / 100;
-          }
           $("#lenddate").val(settings.cindex-1).trigger("change");
+          var clientWidth = document.documentElement > 640 ?640:docEle.clientWidth;
+          var size = clientWidth/320;
+          C.rootFz = size;
       },
       move:function(target,num,c,c1){
         var ml = parseFloat(target.css('margin-left'));
@@ -40,6 +40,7 @@
               "font-size":2 - (a>=1?1:a)+"rem"
           });
           if(c > 0){
+              if(c==0)return;
               $op.next().css({
                   "font-size":1 + (a>=1?1:a) +"rem"
               });
@@ -95,7 +96,7 @@
             var cha = (movePositionX - startPositionX)/16* C.rootFz;
             var endTime = new Date().getTime();
             var time = endTime - initTime ;
-            if (time < 200) {
+            if (time < 300) {
                 $this.find(".active").removeClass('active');
                 $this.children().css("font-size","1rem");
                 var i = Math.round(Math.round(movePositionX - startPositionX) / 16 * C.rootFz);
@@ -190,5 +191,8 @@
         $("#lenddate").change(function(){
             calculateProfit();
         });
+    }
+    window.onload = function(){
+        C.rootFz = parseFloat(document.documentElement.style.fontSize) / 100;
     }
 })(Zepto);

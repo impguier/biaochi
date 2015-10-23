@@ -7,6 +7,7 @@
 body {
   padding: 0;
   margin: 0;
+  background: #eeeeee;
 }
 body .alertLayer {
   border: 1px solid #dddddd;
@@ -26,10 +27,11 @@ body .alertLayer {
   -webkit-transition: all .5s linear;
 }
 body #container {
+  background: #ffffff;
   font-family: HelveticaNeue-Bold, SimHei, Arial;
   width: 20rem;
   position: relative;
-  padding-top: 1.5rem;
+  padding-top: 1rem;
 }
 body #container form input {
   display: block;
@@ -37,7 +39,7 @@ body #container form input {
   border: none;
   height: 2rem;
   width: 6rem;
-  border-bottom: 2px dashed #eaeaea;
+  border-bottom: 1px solid #eaeaea;
   font-size: 1.6rem;
   text-align: center;
   color: #e73c47;
@@ -68,8 +70,8 @@ body #container #slider_wrap #slider {
   height: 4rem;
   overflow: hidden;
   list-style: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 body #container #slider_wrap #slider li {
   float: left;
@@ -138,6 +140,14 @@ body #container div.title span.icon-date {
   background: url("icon/icon-date.png") no-repeat 0 0 scroll;
   background-size: 100%;
 }
+body #container div.title span.icon-rate {
+  display: block;
+  margin-top: 0.125rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  background: url("icon/icon-rate.png") no-repeat 0 0 scroll;
+  background-size: 100%;
+}
 body #container div.title span.text {
   font-size: 0.75rem;
   color: #e73c47;
@@ -155,4 +165,221 @@ body #container .datelist li {
   float: left;
   height: 3.5rem;
   line-height: 1.5;
+}
+.footer {
+  padding: 0 1rem 1rem 1rem;
+  background: #eeeeee;
+  font-family: HelveticaNeue-Bold, SimHei, Arial;
+}
+.footer .backtype {
+  overflow: hidden;
+  padding: 1rem .5rem 0 .5rem;
+}
+.footer .backtype .btn {
+  display: block;
+  width: 7.5rem;
+  height: 2.25rem;
+  line-height: 2.25rem;
+  background: #ffffff;
+  float: left;
+  border: 1px solid #b8b8b8;
+  border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+  font-size: .7rem;
+  color: #b8b8b8;
+  text-align: center;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-decoration: none;
+}
+.footer .backtype .btn.active {
+  color: #00b8c3;
+  border-color: #00b8c3;
+}
+.footer .backtype .btn:first-child {
+  margin-right: 1.5rem;
+}
+.footer .result {
+  padding: 1rem 0;
+  margin: 0;
+  overflow: hidden;
+  list-style: none;
+}
+.footer .result li {
+  width: 8rem;
+  float: left;
+  position: relative;
+  text-align: center;
+}
+.footer .result li:first-child {
+  margin-right: 1rem;
+}
+.footer .result #result1 .up span {
+  font-size: 1.325rem;
+}
+.footer .result #result1 i {
+  display: none;
+  width: .25rem;
+  height: .25rem;
+  border: 1px solid #e73c47;
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+  background: #e73c47;
+}
+.footer .result #result1 p {
+  clear: both;
+  font-size: .5rem;
+  width: 100%;
+  display: block;
+  color: #bbbbbb;
+  line-height: .9rem;
+  margin: 0;
+}
+.footer .result #result2 .up span {
+  font-size: 1.325rem;
+}
+.footer .result #result2 i {
+  display: none;
+  width: .25rem;
+  height: .25rem;
+  border: 1px solid #00b8c3;
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+  background: #00b8c3;
+}
+.footer .result #result2 p {
+  clear: both;
+  font-size: .5rem;
+  width: 100%;
+  display: block;
+  color: #bbbbbb;
+  line-height: .9rem;
+  margin: 0;
+}
+.footer .btn-ck {
+  display: block;
+  height: 2.8rem;
+  width: 18rem;
+  line-height: 2.8rem;
+  color: #ffffff;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+  background: #e73c47;
+  text-align: center;
+  text-decoration: none;
+}
+#plan {
+  background: #eeeeee;
+}
+#plan .backtype {
+  font-size: 0.9em;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -o-box;
+  display: -ms-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  border-bottom: 1px solid #d2d1d6;
+}
+#plan .backtype .icon-help {
+  width: 1.3rem;
+  height: 1.3rem;
+  background: url("icon/icon-help.png") no-repeat 0 0 scroll;
+  background-size: 100%;
+  margin-left: 0.5rem;
+}
+#plan .planlist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#plan .planlist li {
+  padding: 1rem 0;
+  border-bottom: 1px solid #d2d1d6;
+}
+#plan .planlist li dl {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+#plan .planlist li dl dt {
+  width: 18rem;
+  font-size: .8rem;
+  margin-left: 1rem;
+  color: #666666;
+}
+#plan .planlist li dl dt span {
+  color: #333333;
+}
+#plan .planlist li dl dd {
+  width: 8rem;
+  font-size: 0.8rem;
+  margin-left: 1rem;
+  float: left;
+  color: #666666;
+}
+#plan .planlist li dl dd span {
+  color: #333333;
+}
+#plan .planlist li dl dd:last-child {
+  width: 18rem;
+}
+#layer {
+  display: none;
+  position: absolute;
+  top: 0;
+  z-index: 3;
+}
+#layer section {
+  padding-top: 2rem;
+  width: 20rem;
+}
+#layer section h3 {
+  width: 16rem;
+  margin: 0;
+  padding: 0 2rem;
+  font-size: 0.9rem;
+  color: #666666;
+}
+#layer section p {
+  width: 16rem;
+  margin: 0;
+  padding: 0 2rem;
+  font-size: 0.9rem;
+  color: #666666;
+}
+#layer a.btn-close {
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  bottom: 3rem;
+  left: 8.5rem;
+  background: url("icon/icon-close.png") no-repeat 0 0 scroll;
+  background-size: 100%;
+}
+.coverLayer {
+  display: none;
+  position: absolute;
+  top: 0;
+  background: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  height: 100%;
+  z-index: 2;
 }

@@ -27,8 +27,8 @@ html
                 -for(var i=1;i<=36;i++)
                  li=i
           div.title
-              span.icon-date
-              span.text &nbsp;出借利率(月)
+              span.icon-rate
+              span.text &nbsp;年化收益率
           div.profitlist_wrap
             input(type="hidden" id="rate")
             ul#profitlist
@@ -37,7 +37,36 @@ html
               li 15%
               li 16%
               li 17%
-          div#result
+
+      div.footer
+            div.backtype
+                a(class="btn active" href="javascript:void(0);" id="type1") 按月还息到期还本
+                a(class="btn" href="javascript:void(0);" id="type2") 等额本息
+            ul.result
+                li#result1
+                    div.up
+                        i
+                        span
+
+                    p 平台预计收益(元)
+                li#result2
+                    div.up
+                        i
+                        span
+
+                    p 银行同期收益(元)
+            a#lookplan.btn-ck(href="#plan") 查看还款计划
+      div#plan
+      div#layer
+            section
+                h3 什么是等额本息还款方式？
+                p 也称定期付息，即借款人每月按相等的金额偿还贷款本息，其中每月贷款利息按月初剩余贷款本金计算并逐月结清。
+            section
+                h3 什么是按月还息到期还本？
+                p 按月付息、到期还本是指借款人在贷款到期日一次 性归还贷款本金，利息按月归还。
+            a.btn-close
+      div.coverLayer
+
       script(src="/js/lib/zepto/zepto.js")
       script(src="/js/lib/zepto/zepto.all.js")
       script(src='/js/plugin/zepto.bc.js')
